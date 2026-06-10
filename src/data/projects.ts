@@ -3,29 +3,36 @@ export type Project = {
   title: string;
   description: string;
   category: string;
-  image?: string;
+  image?: string[];
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Wine Labels",
-    description: "Minimalist packaging design for personalized wine bottles.",
-    category: "Packaging Design",
-    image: "",
+    title: "Wine Label Design",
+    description: "Creating a collection of wine labels for personalized wine bottles.",
+    category: "Branding • Packaging",
+    image: [
+      "/images/etykiety_win.png",
+      "/images/etykiety_win.png"
+    ]
   },
   {
     id: 2,
-    title: "Candle Labels",
-    description: "Clean and soft label design for handmade candles.",
+    title: "Candle Label Collection",
+    description: "A clean set of candle labels designed for a handmade artisan brand.",
     category: "Packaging Design",
-    image: "",
+    image: [
+      "/images/etykiety_win.png",
+      "/images/etykiety_win.png",
+      "/images/etykiety_win.png"
+    ],
   },
   {
     id: 3,
     title: "Hair Salon Logo",
     description: "Illustrated brand identity for a local hair salon.",
     category: "Brand Identity",
-    image: "",
+    image: [],
   },
 ];

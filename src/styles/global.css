@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: linear-gradient(135deg,
+      #f0d7f7,
+      #f1ecff,
+      #d6f0ff);
+
+  font-family: Inter, sans-serif;
+}
