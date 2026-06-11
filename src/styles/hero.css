@@ -82,8 +82,8 @@
     font-size: 64px;
     font-weight: 600;
     margin: 0;
-    letter-spacing: -1px;
     letter-spacing: 0.1em;
+    color: #4f3a53;
 }
 
 .hero-left h2 {

@@ -10,26 +10,17 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <article key={project.id} className="project-card">
                         <div className="project-info">
-                            <span className="project-number">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
+                            <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
                             <div className="project-header">
-                                <span className="project-category">
-                                    {project.category}
-                                </span>
+                                <span className="project-category">{project.category}</span>
 
                                 <h3>{project.title}</h3>
                             </div>
 
-                            <p className="project-description">
-                                {project.shortDescription}
-                            </p>
+                            <p className="project-description">{project.shortDescription}</p>
 
-                            <img
-                                src={project.coverImage}
-                                alt={project.title}
-                                className="project-cover"
-                            />
+                            <img src={project.coverImage} alt={project.title} className="project-cover" />
+                            <div className="project-cta">View project →</div>
                         </div>
                     </article>
                 ))}

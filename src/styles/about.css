@@ -35,4 +35,8 @@
         margin: 0 auto;
         padding: 50px 40px;
     }
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
 }
