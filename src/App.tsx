@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import Hero from "./components/Hero";
 import { heroes } from "./data/heroes";
 import Blob from "./components/Blob";
