@@ -1,56 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useScrollSpy(dots: string[]) {
-    const scrollTimeout = useRef<number | null>(null);
-
+export function useScrollSpy(ids: string[]) {
     const [activeIndex, setActiveIndex] = useState(0);
-    
+    const scrollTimeout = useRef<number | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollY = window.scrollY + window.innerHeight * 0.95;
+            const scrollY = window.scrollY + window.innerHeight * 0.5;
 
-            let closestIndex = 0;
-            let closestDistance = Infinity;
+            let newIndex = 0;
 
-            dots.forEach((id, i) => {
+            ids.forEach((id, i) => {
                 const el = document.getElementById(id);
                 if (!el) return;
 
-                const center = el.offsetTop + el.offsetHeight / 2;
-                const distance = Math.abs(scrollY - center);
+                const top = el.offsetTop;
 
-                if (distance < closestDistance) {
-                    closestDistance = distance;
-                    closestIndex = i;
+                if (scrollY >= top) {
+                    newIndex = i;
                 }
             });
 
-            setActiveIndex(closestIndex);
+            setActiveIndex(newIndex);
 
             if (scrollTimeout.current) {
                 clearTimeout(scrollTimeout.current);
             }
 
             scrollTimeout.current = window.setTimeout(() => {
-                setActiveIndex(closestIndex);
-            }, 80);
+                setActiveIndex(newIndex);
+            }, 50);
         };
 
         window.addEventListener("scroll", handleScroll);
-
         handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [ids]);
 
     return activeIndex;
 }
-
-
-
-
-
-
-
-

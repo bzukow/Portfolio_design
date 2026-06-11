@@ -46,7 +46,11 @@ html {
     pointer-events: none;
     z-index: 2;
 }
-
+@media (hover: none) and (pointer: coarse) {
+  .dot {
+    pointer-events: none;
+  }
+}
 @media (max-width: 600px) {
     .dot-nav {
         right: 5px;
