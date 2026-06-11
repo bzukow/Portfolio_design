@@ -40,7 +40,7 @@ html {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: black;
+    background: #57475a;
     transform: translateY(0px);
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
