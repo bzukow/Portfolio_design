@@ -75,9 +75,10 @@ p {
 }
 
 .projects-title {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 500;
-    opacity: 0.8;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
 }
 
 .project-info {
@@ -154,4 +155,30 @@ p {
     display: inline-block;
     margin-bottom: 1rem;
     font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+    .project-card + .project-card {
+        padding-top: 3rem;
+    }
+    .projects {
+        padding: 70px 80px;
+    }
+    .project-card {
+        padding: 1rem 0;
+        border-bottom: unset;
+    }
+    .project-card::after {
+        content: "View project →";
+        position: absolute;
+        right: 20px;
+        bottom: -10px;
+        opacity: 0.6;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 600px) {
+    .projects {
+        padding: 50px 40px;
+    }
 }

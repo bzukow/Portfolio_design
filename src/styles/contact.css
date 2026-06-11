@@ -1,0 +1,84 @@
+.contact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 80px 300px 80px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
+
+.contact-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bubble {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+
+    background: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+
+    flex: 0 0 auto;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+/* .bubble svg,
+.bubble span {
+    
+} */
+
+.bubble:hover {
+    transform: translateY(-6px) scale(1.04);
+    background: rgba(95, 36, 107, 0.144);
+}
+
+@media (max-width: 900px) {
+    .contact {
+        margin: 0 auto;
+        padding: 50px 80px 100px 80px;
+    }
+    .bubble {
+        width: 150px;
+        height: 150px;
+    }
+    .contact-bubbles {
+        max-width: 320px;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .contact {
+        margin: 0 auto;
+        padding: 50px 40px 125px 40px;
+    }
+    .bubble {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-bubbles {
+        max-width: 320px;
+        gap: 16px;
+    }
+}

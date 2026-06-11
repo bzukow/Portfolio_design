@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "../styles/navigation.css";
 
 type Props = {
     dots: string[];
@@ -25,11 +26,9 @@ export default function Navigation({ dots, activeIndex}: Props) {
     const handleClick = (id: string) => {
         const el = document.getElementById(id);
         if (!el) return;
-        const yOffset = 100;
-        const y = el.getBoundingClientRect().top + window.pageYOffset - yOffset;
-
+        
         window.scrollTo({
-            top: y,
+            top: el.offsetTop,
             behavior: "smooth",
         });
     };

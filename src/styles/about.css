@@ -1,0 +1,38 @@
+.about {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 80px;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.about-text p.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 900px) {
+    .about {
+        margin: 0 auto;
+        padding: 70px 80px;
+    }
+}
+@media (max-width: 600px) {
+    .about {
+        margin: 0 auto;
+        padding: 50px 40px;
+    }
+}
