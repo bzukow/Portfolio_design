@@ -1,34 +1,37 @@
 import { projects } from "../data/projects";
+import "../styles/projects.css";
 
 export default function Projects() {
     return (
-        <section className="projects">
-            <h2>Projects</h2>
+        <section className="projects" id="projects">
+            <div className="projects-container">
+                <h2 className="projects-title">Selected Projects</h2>
 
-            <div className="project-list">
-                {projects.map((project) => (
-                    <div key={project.id} className="project-row">
-
-                        <div className="project-text">
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <span className="project-category">
-                                {project.category}
+                {projects.map((project, index) => (
+                    <article key={project.id} className="project-card">
+                        <div className="project-info">
+                            <span className="project-number">
+                                {String(index + 1).padStart(2, "0")}
                             </span>
-                        </div>
+                            <div className="project-header">
+                                <span className="project-category">
+                                    {project.category}
+                                </span>
 
-                        <div className="project-media">
-                            {project.image?.map((img, index) => (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    className={`img img-${index + 1}`}
-                                    alt={project.title}
-                                />
-                            ))}
-                        </div>
+                                <h3>{project.title}</h3>
+                            </div>
 
-                    </div>
+                            <p className="project-description">
+                                {project.shortDescription}
+                            </p>
+
+                            <img
+                                src={project.coverImage}
+                                alt={project.title}
+                                className="project-cover"
+                            />
+                        </div>
+                    </article>
                 ))}
             </div>
         </section>

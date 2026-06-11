@@ -9,7 +9,7 @@ type Props = {
 
 export default function Hero({ data }: Props) {
     return (
-        <section className="hero">
+        <section className="hero" id="hero">
             <div className="hero-left">
                 <h1>{data.name}</h1>
 
