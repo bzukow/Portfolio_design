@@ -16,7 +16,7 @@ p {
 
 .projects-title {
     font-size: 2.5rem;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     opacity: 0.6;
     letter-spacing: 0.1em;
 }
@@ -30,7 +30,7 @@ p {
 .project-card {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     position: relative;
@@ -38,22 +38,6 @@ p {
         transform 0.5s ease,
         opacity 0.5s ease;
 }
-/* .project-card::after {
-    content: "View project →";
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-
-    opacity: 0;
-    transform: translateY(5px);
-
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-.project-card:hover::after {
-    opacity: 0.7;
-    transform: translateY(0);
-} */
 .project-cover {
     width: 100%;
     border-radius: 24px;
@@ -103,7 +87,7 @@ p {
 
 @media (max-width: 900px) {
     .project-card + .project-card {
-        padding-top: 3rem;
+        padding-top: 2rem;
     }
     .projects {
         padding: 70px 80px;
@@ -112,17 +96,11 @@ p {
         padding: 1rem 0;
         border-bottom: unset;
     }
-    /* .project-card::after {
-        content: "View project →";
-        display: block;
-        right: 20px;
-        bottom: -30px;
-        padding: 30px 0 20px;
-        opacity: 0.6;
-        font-size: 0.9rem;
-        z-index: 3;
-    } */
-}
+    .project-card:hover {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+} 
 .project-cta {
     position: absolute;
     right: 20px;

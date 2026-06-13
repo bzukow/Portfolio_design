@@ -4,23 +4,59 @@
     height: 420px;
     overflow: hidden;
     border-radius: 24px;
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
 }
-
+.carousel:hover{
+    transform: scale(1.02);
+}
 .carousel-image {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     opacity: 0;
     transition: opacity 0.6s ease;
+    transform: scale(1.04);
 }
 
 .carousel-image.active {
     opacity: 1;
+    animation: zoomImage 12s linear forwards;
 }
 
 .carousel:hover .carousel-image.active {
-    transform: scale(1.04);
+    transform: scale(1.06);
+}
+
+.carousel-counter {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 5;
+}
+
+@keyframes zoomImage {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+@media (max-width: 768px) {
+    .carousel {
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
 }

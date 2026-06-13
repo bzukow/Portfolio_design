@@ -1,65 +1,67 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/projectcovercarousel.css";
+import { useIsMobile } from "../hooks/useIsMobile";
+
 type Props = {
-    images: string[];
+    images: {
+        desktop: string[];
+        mobile: string[];
+    };
     interval?: number;
 };
 
 export default function ProjectCoverCarousel({ images, interval = 4000 }: Props) {
     const [index, setIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
+    // const [isVisible, setIsVisible] = useState(true);
+
+    const isMobile = useIsMobile();
+    const currentGallery = isMobile ? images.mobile : images.desktop;
+
+    useEffect(() => {
+        setIndex(0);
+    }, [isMobile]);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
-    const startX = useRef(0);
+    const timeoutRef = useRef<number | null>(null);
+    const scheduleNext = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-    useEffect(() => {
-        if (!images.length) return;
-        if (!isVisible || isHovered) return;
-
-        const id = setInterval(() => {
-            setIndex((prev) => (prev + 1) % images.length);
+        timeoutRef.current = window.setTimeout(() => {
+            setIndex((p) => (p + 1) % currentGallery.length);
         }, interval);
-
-        return () => clearInterval(id);
-    }, [images.length, interval, isVisible, isHovered]);
-
+    };
     useEffect(() => {
-        if (!containerRef.current) return;
+        if (!currentGallery.length) return;
+        // if (!isVisible || (isHovered && !isMobile)) return;
 
-        const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.3 });
+        scheduleNext();
 
-        observer.observe(containerRef.current);
-        return () => observer.disconnect();
-    }, []);
+        return () => {
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        };
+    }, [index, isHovered, isMobile, currentGallery.length]);
 
-    const next = () => setIndex((p) => (p + 1) % images.length);
-    const prev = () => setIndex((p) => (p - 1 + images.length) % images.length);
+    // useEffect(() => {
+    //     if (!containerRef.current) return;
 
-    const onTouchStart = (e: React.TouchEvent) => {
-        startX.current = e.touches[0].clientX;
-    };
+    //     const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.3 });
 
-    const onTouchEnd = (e: React.TouchEvent) => {
-        const delta = e.changedTouches[0].clientX - startX.current;
+    //     observer.observe(containerRef.current);
+    //     return () => observer.disconnect();
+    // }, []);
 
-        const threshold = 50;
-        if (delta > threshold) prev();
-        else if (delta < -threshold) next();
-    };
+    const next = () => setIndex((p) => (p + 1) % currentGallery.length);
+    const prev = () => setIndex((p) => (p - 1 + currentGallery.length) % currentGallery.length);
 
     return (
-        <div
-            className="carousel"
-            ref={containerRef}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-            onClick={next}>
-            {images.map((src, i) => (
+        <div className="carousel" ref={containerRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={next}>
+            {currentGallery.map((src, i) => (
                 <img key={src} src={src} className={`carousel-image ${i === index ? "active" : ""}`} />
             ))}
+            <div className="carousel-counter">
+                {index + 1} / {currentGallery.length}
+            </div>
         </div>
     );
 }

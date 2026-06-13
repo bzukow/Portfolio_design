@@ -23,6 +23,17 @@ export default function Hero({ data }: Props) {
                     <img src={data.image} alt="profile" />
                 </div>
             </div>
+            <div
+                className="scroll-down"
+                onClick={() =>
+                    document.getElementById("projects")?.scrollIntoView({
+                        behavior: "smooth",
+                    })
+                }>
+                <svg width="75" height="75" viewBox="0 0 36 36" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </div>
         </section>
     );
 }
