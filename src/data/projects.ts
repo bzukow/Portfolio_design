@@ -20,7 +20,6 @@ export const projects: Project[] = [
             desktop: ["/images/yarmal-swidosliwa.webp", "/images/etykiety-win.webp", "/images/yarmal-pigwowka.webp"],
             mobile: ["/images/yarmal-swidosliwa-mobile.webp", "/images/etykiety-win-mobile.webp", "/images/yarmal-pigwowka-mobile.webp"]
         }
-        
     },
     {
         id: 2,

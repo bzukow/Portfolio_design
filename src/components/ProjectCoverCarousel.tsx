@@ -13,7 +13,6 @@ type Props = {
 export default function ProjectCoverCarousel({ images, interval = 4000 }: Props) {
     const [index, setIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
-    // const [isVisible, setIsVisible] = useState(true);
 
     const isMobile = useIsMobile();
     const currentGallery = isMobile ? images.mobile : images.desktop;
@@ -33,7 +32,6 @@ export default function ProjectCoverCarousel({ images, interval = 4000 }: Props)
     };
     useEffect(() => {
         if (!currentGallery.length) return;
-        // if (!isVisible || (isHovered && !isMobile)) return;
 
         scheduleNext();
 
@@ -41,15 +39,6 @@ export default function ProjectCoverCarousel({ images, interval = 4000 }: Props)
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
     }, [index, isHovered, isMobile, currentGallery.length]);
-
-    // useEffect(() => {
-    //     if (!containerRef.current) return;
-
-    //     const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.3 });
-
-    //     observer.observe(containerRef.current);
-    //     return () => observer.disconnect();
-    // }, []);
 
     const next = () => setIndex((p) => (p + 1) % currentGallery.length);
 

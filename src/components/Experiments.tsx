@@ -28,7 +28,6 @@ export default function Experiments() {
                     {experimentses.map((item) => (
                         <div className="experiments-item" key={item.id}>
                             <img src={item.src} alt={item.title} loading="lazy" />
-                            {/* <p className="caption">{item.title}</p> */}
                         </div>
                     ))}
                 </div>

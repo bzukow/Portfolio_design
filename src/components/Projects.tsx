@@ -14,7 +14,6 @@ export default function Projects() {
                             <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
                             <div className="project-header">
                                 <span className="project-category">{project.category}</span>
-
                                 <h3>{project.title}</h3>
                             </div>
 
