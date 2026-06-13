@@ -1,5 +1,6 @@
 import { projects } from "../data/projects";
 import "../styles/projects.css";
+import ProjectCoverCarousel from "./ProjectCoverCarousel";
 
 export default function Projects() {
     return (
@@ -17,10 +18,9 @@ export default function Projects() {
                                 <h3>{project.title}</h3>
                             </div>
 
-                            <p className="project-description">{project.shortDescription}</p>
+                            <p className="project-description">{project.description}</p>
 
-                            <img src={project.coverImage} alt={project.title} className="project-cover" />
-                            <div className="project-cta">View project →</div>
+                            <ProjectCoverCarousel images={project.gallery} />
                         </div>
                     </article>
                 ))}
