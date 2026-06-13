@@ -10,8 +10,7 @@ export const heroes = [
     {
         id: 1,
         name: "Barbara Zukowska",
-        profession: "Frontend Developer & Visual Creator<br/>exploring UI and digital illustration",
-        description: "minimal UI / branding / illustration",
+        profession: "Frontend Developer & Digital Designer <br/>exploring UI and digital illustration",
         image: "/images/photo_v1.webp",
     },
 ];
