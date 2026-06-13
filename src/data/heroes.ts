@@ -2,7 +2,6 @@ export type Hero = {
     id: number;
     name: string;
     profession: string;
-    description?: string;
     image?: string;
 };
 
