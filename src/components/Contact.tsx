@@ -13,15 +13,15 @@ export default function Contact() {
                     <LuMail size={50} />
                 </a>
 
-                <a href="https://github.com/bzukow" className="bubble">
+                <a href="https://github.com/bzukow" className="bubble" target="_blank">
                     <FiGithub size={50} />
                 </a>
 
-                <a href="https://instagram.com/aiystheice" className="bubble">
+                <a href="https://instagram.com/aiystheice" className="bubble" target="_blank">
                     <BsInstagram size={50} />
                 </a>
 
-                <a href="https://www.linkedin.com/in/zukowska-barbara/" className="bubble">
+                <a href="https://www.linkedin.com/in/zukowska-barbara/" className="bubble" target="_blank">
                     <TbBrandLinkedin size={58} />
                 </a>
             </div>
