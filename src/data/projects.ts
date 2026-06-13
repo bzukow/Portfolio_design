@@ -36,7 +36,7 @@ export const projects: Project[] = [
         id: 3,
         title: "Dog Grooming Studio Branding",
         category: "Brand Identity • Illustration",
-        description: "Visual identity concept for a dog grooming studio. The project explores a friendly, clean aesthetic aimed at creating a warm and approachable brand for pet care services.",
+        description: "Visual identity concept for a dog grooming studio. The project explores a friendly, clean aesthetic aimed at creating a warm and approachable brand for pet care services.",
         gallery: {
             desktop: ["/images/grooming-salon-1.webp", "/images/grooming-salon-2.webp", "/images/grooming-salon-3.webp"],
             mobile: ["/images/grooming-salon-1-mobile.webp", "/images/grooming-salon-2-mobile.webp", "/images/grooming-salon-3-mobile.webp"],
