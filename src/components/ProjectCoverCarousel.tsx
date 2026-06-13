@@ -52,7 +52,6 @@ export default function ProjectCoverCarousel({ images, interval = 4000 }: Props)
     // }, []);
 
     const next = () => setIndex((p) => (p + 1) % currentGallery.length);
-    const prev = () => setIndex((p) => (p - 1 + currentGallery.length) % currentGallery.length);
 
     return (
         <div className="carousel" ref={containerRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={next}>
