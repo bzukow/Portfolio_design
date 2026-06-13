@@ -9,7 +9,7 @@ export type Hero = {
 export const heroes = [
     {
         id: 1,
-        name: "Barbara",
+        name: "Barbara Zukowska",
         profession: "Frontend Developer & Visual Creator<br/>exploring UI and digital illustration",
         description: "minimal UI / branding / illustration",
         image: "/images/photo_v1.webp",
