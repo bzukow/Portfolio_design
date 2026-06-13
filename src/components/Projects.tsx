@@ -6,7 +6,7 @@ export default function Projects() {
     return (
         <section className="projects" id="projects">
             <div className="projects-container">
-                <h2 className="projects-title">Selected Projects</h2>
+                <h2 className="projects-title">Projects</h2>
 
                 {projects.map((project, index) => (
                     <article key={project.id} className="project-card">

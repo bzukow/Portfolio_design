@@ -1,15 +1,15 @@
 import Hero from "./components/Hero";
-import { heroes } from "./data/heroes";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Experiments from "./components/Experiments";
 import Blob from "./components/Blob";
 import Projects from "./components/Projects";
 import Navigation from "./components/Navigation";
-import "./styles/navigation.css";
 import { useScrollSpy } from "./hooks/useScrollSpy";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import { heroes } from "./data/heroes";
 
 export default function App() {
-    const dots = ["hero", "projects", "about", "contact"];
+    const dots = ["hero", "projects", "experiments", "about", "contact"];
     const activeIndex = useScrollSpy(dots);
 
     return (
@@ -18,6 +18,7 @@ export default function App() {
             <Blob />
             <Hero data={heroes[0]} />
             <Projects />
+            <Experiments />
             <About />
             <Contact />
         </>
