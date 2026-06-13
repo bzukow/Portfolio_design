@@ -13,7 +13,7 @@ export default function Experiments() {
             <div className="experiments-header">
                 <h2 className="experiments-title">Personal Visual Studies</h2>
                 <p className="reveal">
-                    A collection of personal works exploring illustration, print, and object-based design. The pieces range from commissioned gifts to experimental visual concepts.
+                    A collection of personal works exploring illustration, print, and object-based design. The pieces range from commissioned gifts to experimental visual concepts.
                 </p>
             </div>
             {isMobile ? (
